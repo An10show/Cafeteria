@@ -1,0 +1,94 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Delícia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="#" class="logo-link">
+                <img src="logo.png" alt="Café Delícia Logo" id="logo-img">
+                <h1>Café Delícia</h1>
+            </a>
+            <nav>
+                <a href="#menu-section-anchor">Menu</a>
+                <a href="#order-section-anchor">Pedir na Mesa</a>
+                <button id="cart-button" aria-label="Abrir carrinho">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count-badge">0</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content-wrapper">
+            <div class="container">
+                <h2>O aroma que conquista, o sabor que inspira.</h2>
+                <p>Descubra nossa seleção de cafés especiais e delícias artesanais.</p>
+                <a href="#menu-section-anchor" class="btn btn-primary">Ver Menu</a>
+            </div>
+        </div>
+    </section>
+    
+    <div id="menu-section-anchor" style="scroll-margin-top: 80px;"></div>
+    <main id="menu-container" class="container">
+        <section id="coffee-menu">
+            <h2>Nossos Cafés</h2>
+            <div class="menu-grid" id="coffee-items-grid">
+                <!-- Coffee items will be injected by JS -->
+            </div>
+        </section>
+
+        <section id="food-menu">
+            <h2>Salgados & Doces</h2>
+            <div class="menu-grid" id="food-items-grid">
+                <!-- Food items will be injected by JS -->
+            </div>
+        </section>
+    </main>
+
+    <div id="order-section-anchor" style="scroll-margin-top: 80px;"></div>
+    <section id="order-table-section" class="container">
+        <h2>Pedido por Mesa</h2>
+        <p>Informe o número da sua mesa para que seu pedido seja direcionado corretamente.</p>
+        <div class="table-input-group">
+            <label for="table-number-input">Número da Mesa:</label>
+            <input type="text" id="table-number-input" placeholder="Ex: 12A">
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Café Delícia. Todos os direitos reservados.</p>
+            <p>Design com <span class="color-red">Vermelho</span> & <span class="color-silver">Prata</span></p>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="cart-modal-title">
+        <div class="modal-overlay" tabindex="-1" data-micromodal-close></div>
+        <div class="modal-content" role="document">
+            <div class="modal-header">
+                <h3 id="cart-modal-title">Seu Carrinho</h3>
+                <button id="close-modal-button" class="close-button" aria-label="Fechar carrinho">&times;</button>
+            </div>
+            <div id="cart-items-container" class="modal-body">
+                <!-- Cart items will be injected by JS -->
+                <p id="empty-cart-message">Seu carrinho está vazio.</p>
+            </div>
+            <div class="cart-summary">
+                <strong>Total: <span id="cart-total-price">R$ 0,00</span></strong>
+            </div>
+            <div class="modal-footer">
+                 <button id="place-order-button" class="btn btn-primary btn-place-order">Finalizar Pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
